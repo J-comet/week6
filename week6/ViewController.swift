@@ -17,11 +17,15 @@ import UIKit
 // => Frame 한계 - 다양한 디바이스 대응 불가
 // => AutoResizingMask, AutoLayout => 지금까지 스토리보드로 대응
 // => NSLayoutConstraints => 코드베이스 대응
+//  1. isActive
+//  2. addConstraints
+// => NSLayoutAnchor
 
 class ViewController: UIViewController {
 
     let emailTextField = UITextField()
     let pwTextField = UITextField()
+    let signButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +34,9 @@ class ViewController: UIViewController {
         view.addSubview(emailTextField)
         view.addSubview(pwTextField)
         
+        
         // NSLayoutConstraint 와 AutoresizingMask 를 같이 사용할 수 없음.
         pwTextField.translatesAutoresizingMaskIntoConstraints = false
-        
-        // 레이아웃에 대한 활성화
-        NSLayoutConstraint(item: pwTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50).isActive = true
-        
-        NSLayoutConstraint(item: pwTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50).isActive = true
-        
-        NSLayoutConstraint(item: pwTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60).isActive = true
-        
-        NSLayoutConstraint(item: pwTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50).isActive = true
-        
-        pwTextField.backgroundColor = .link
         
         
         
@@ -53,8 +47,50 @@ class ViewController: UIViewController {
         emailTextField.isSecureTextEntry = true
         emailTextField.keyboardType = .numberPad
         emailTextField.placeholder = "입력"
+        
+        // 레이아웃에 대한 활성화
+        // 1. isActive 방식
+//        NSLayoutConstraint(item: pwTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50).isActive = true
+//
+//        NSLayoutConstraint(item: pwTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50).isActive = true
+//
+//        NSLayoutConstraint(item: pwTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60).isActive = true
+//
+//        NSLayoutConstraint(item: pwTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50).isActive = true
+        
+        
+        
+        // 2. addConstraints 방식
+        let leading = NSLayoutConstraint(item: pwTextField, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 50)
+        let trailing = NSLayoutConstraint(item: pwTextField, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -50)
+        let height = NSLayoutConstraint(item: pwTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60)
+        let top = NSLayoutConstraint(item: pwTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50)
+        view.addConstraints([leading, trailing, height, top])
+        pwTextField.backgroundColor = .link
+        
+       setLayoutAnchor()
+    }
+    
+    @objc
+    func signupButtonClicked() {
+        // 스토리보드에서 사용하지 않기 때문에 스냅뷰컨트롤러를 바로 사용
+        present(LocationViewController(), animated: true)
     }
 
+    // NSLayoutAnchor 방식
+    func setLayoutAnchor() {
+        view.addSubview(signButton)
+        signButton.translatesAutoresizingMaskIntoConstraints = false
+        signButton.backgroundColor = .orange
+        signButton.addTarget(self, action: #selector(signupButtonClicked), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            signButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signButton.widthAnchor.constraint(equalToConstant: 300),
+            signButton.heightAnchor.constraint(equalToConstant: 50),
+            signButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
 
 }
 
