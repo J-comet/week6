@@ -17,6 +17,7 @@
 		C05B7EF02A94467B001808C5 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EEF2A94467B001808C5 /* SnapViewController.swift */; };
 		C05B7EF22A945CBD001808C5 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EF12A945CBD001808C5 /* TextViewController.swift */; };
 		C05B7EF52A947928001808C5 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EF42A947928001808C5 /* LocationViewController.swift */; };
+		C05B7EF92A949A69001808C5 /* Exam01ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EF82A949A69001808C5 /* Exam01ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		C05B7EEF2A94467B001808C5 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
 		C05B7EF12A945CBD001808C5 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		C05B7EF42A947928001808C5 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		C05B7EF82A949A69001808C5 /* Exam01ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam01ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		C04D40D42A930A00006AD1D7 /* week6 */ = {
 			isa = PBXGroup;
 			children = (
+				C05B7EF62A949A38001808C5 /* assignment */,
 				C05B7EEE2A944646001808C5 /* Test */,
 				C04D40D52A930A00006AD1D7 /* AppDelegate.swift */,
 				C04D40D72A930A00006AD1D7 /* SceneDelegate.swift */,
@@ -84,6 +87,14 @@
 				C05B7EF12A945CBD001808C5 /* TextViewController.swift */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		C05B7EF62A949A38001808C5 /* assignment */ = {
+			isa = PBXGroup;
+			children = (
+				C05B7EF82A949A69001808C5 /* Exam01ViewController.swift */,
+			);
+			path = assignment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 				C04D40DA2A930A00006AD1D7 /* ViewController.swift in Sources */,
 				C05B7EF52A947928001808C5 /* LocationViewController.swift in Sources */,
 				C04D40D62A930A00006AD1D7 /* AppDelegate.swift in Sources */,
+				C05B7EF92A949A69001808C5 /* Exam01ViewController.swift in Sources */,
 				C04D40D82A930A00006AD1D7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
