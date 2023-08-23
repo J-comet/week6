@@ -31,8 +31,6 @@ class MapViewController: UIViewController {
     }()
     //MARK: - 디자인 END
     
-    //    let locationManager = CLLocationManager()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -43,6 +41,13 @@ class MapViewController: UIViewController {
         
         // 최초 진입시 GPS 확인
         checkGPSAuth()
+        
+        TheaterList.mapAnnotations.forEach { theater in
+            addMarker(theater: theater, type: .all)
+        }
+        
+        // 모든 annotation 표시
+        mapView.showAnnotations(self.mapView.annotations, animated: true)
     }
     
     @objc
@@ -125,9 +130,22 @@ class MapViewController: UIViewController {
     
     func showSheet() {
         let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let action = UIAlertAction(title: "1번", style: .default)
+        Theater.TheaterType.allCases.forEach { type in
+            if type == .none {
+                // foreach 에서는 return 이 continue 효과
+                return
+            }
+            let action = UIAlertAction(title: type.rawValue, style: .default) { _ in
+                // 선택한 타입만 보이도록 하기
+                self.mapView.removeAnnotations(self.mapView.annotations)
+                TheaterList.mapAnnotations.forEach { theater in
+                    self.addMarker(theater: theater, type: type)
+                }
+                self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+            }
+            sheet.addAction(action)
+        }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
-        sheet.addAction(action)
         sheet.addAction(cancelAction)
         present(sheet, animated: true)
     }
@@ -152,8 +170,32 @@ class MapViewController: UIViewController {
             latitude: lat,
             longitude: lng
         )
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: CLLocationDistance(exactly: 1000)!, longitudinalMeters: CLLocationDistance(exactly: 1000)!)
+        let region = MKCoordinateRegion(
+            center: center,
+            latitudinalMeters: CLLocationDistance(exactly: 5000)!,
+            longitudinalMeters: CLLocationDistance(exactly: 5000)!
+        )
         mapView.setRegion(mapView.regionThatFits(region), animated: true)
+    }
+    
+    func addMarker(theater: Theater, type: Theater.TheaterType) {
+        let center = CLLocationCoordinate2D(latitude: theater.latitude, longitude: theater.longitude)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 400, longitudinalMeters: 400)
+        mapView.setRegion(region, animated: true)
+        // 지도에 어노테이션 추가
+        let annotation = MKPointAnnotation()
+        annotation.title = theater.location
+        annotation.coordinate = center
+        
+        if type == .all {
+            mapView.addAnnotation(annotation)
+        } else {
+            if theater.type == type {
+                mapView.addAnnotation(annotation)
+            }
+        }
+        
+        
     }
 }
 
