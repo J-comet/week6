@@ -23,15 +23,15 @@ import MapKit
 
 class MapViewController: UIViewController {
     
-    //MARK: 디자인 START
+    //MARK: - 디자인 START
     let mapView = {
         let view = MKMapView()
         view.showsUserLocation = true
         return view
     }()
-    //MARK: 디자인 END
+    //MARK: - 디자인 END
     
-    let locationManager = CLLocationManager()
+    //    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class MapViewController: UIViewController {
         configNavBar()
         designVC()
         
-        locationManager.delegate = self
+        LocationHelper.shared.locationManager.delegate = self
         
         // 최초 진입시 GPS 확인
         checkGPSAuth()
@@ -75,7 +75,10 @@ class MapViewController: UIViewController {
                 
             case .off:
                 print("==== 456 ====")
-                self.defaultMapCenter()
+                self.updateMapViewCenter(
+                    lat: Theater.defaultAnnotaion.latitude,
+                    lng: Theater.defaultAnnotaion.longitude
+                )
                 self.showRequestLocationServiceAlert()
             }
         }
@@ -85,17 +88,20 @@ class MapViewController: UIViewController {
         switch status {
         case .notDetermined:
             print("notDetermined, 권한 결정되지 않음")
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestWhenInUseAuthorization()
+            LocationHelper.shared.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            LocationHelper.shared.locationManager.requestWhenInUseAuthorization()
         case .restricted:
             print("restricted, 자녀보호기능으로 제한")
         case .denied:
             print("denied, 거부")
-            defaultMapCenter()
+            self.updateMapViewCenter(
+                lat: Theater.defaultAnnotaion.latitude,
+                lng: Theater.defaultAnnotaion.longitude
+            )
             showRequestLocationServiceAlert()
         case .authorizedAlways, .authorizedWhenInUse:
             print("authorizedAlways, authorizedWhenInUse")
-            locationManager.startUpdatingLocation()
+            LocationHelper.shared.locationManager.startUpdatingLocation()
         case .authorized:
             print("authorized")
             /**
@@ -128,7 +134,10 @@ class MapViewController: UIViewController {
     
     func designVC() {
         setMapView()
-        defaultMapCenter()
+        self.updateMapViewCenter(
+            lat: Theater.defaultAnnotaion.latitude,
+            lng: Theater.defaultAnnotaion.longitude
+        )
     }
     
     func setMapView() {
@@ -138,12 +147,11 @@ class MapViewController: UIViewController {
         }
     }
     
-    func defaultMapCenter() {
+    func updateMapViewCenter(lat: Double, lng: Double) {
         let center = CLLocationCoordinate2D(
-            latitude: Theater.defaultAnnotaion.latitude,
-            longitude: Theater.defaultAnnotaion.longitude
+            latitude: lat,
+            longitude: lng
         )
-        
         let region = MKCoordinateRegion(center: center, latitudinalMeters: CLLocationDistance(exactly: 1000)!, longitudinalMeters: CLLocationDistance(exactly: 1000)!)
         mapView.setRegion(mapView.regionThatFits(region), animated: true)
     }
@@ -154,8 +162,12 @@ extension MapViewController: CLLocationManagerDelegate {
         print(#function ,locations)
         if let coordinate = locations.last?.coordinate {
             print("=====", coordinate, "=====")
-            
+            self.updateMapViewCenter(
+                lat: coordinate.latitude,
+                lng: coordinate.longitude
+            )
         }
+        LocationHelper.shared.locationManager.stopUpdatingLocation()
     }
     
     // 사용자의 권한 상태 바뀔 때 알려줌 (iOS 14 미만)
