@@ -50,6 +50,7 @@ class MapViewController: UIViewController {
         
         LocationHelper.shared.locationManager.delegate = self
         mapView.delegate = self
+        mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: CustomAnnotationView.identifier)
         
         // 최초 진입시 GPS 확인
         checkGPSAuth()
@@ -215,6 +216,15 @@ class MapViewController: UIViewController {
             longitudinalMeters: CLLocationDistance(exactly: 5000)!
         )
         mapView.setRegion(mapView.regionThatFits(region), animated: true)
+        
+        // 최소 정사각형 크기를 설정
+//        var zoomRect: MKMapRect = MKMapRect.null
+//            for annotation in mapView.annotations {
+//                let annotationPoint = MKMapPoint(annotation.coordinate)
+//                let pointRect = MKMapRect(x: annotationPoint.x, y: annotationPoint.y, width: 0.1, height: 0.1)
+//                zoomRect = zoomRect.union(pointRect)
+//            }
+//        mapView.setVisibleMapRect(zoomRect, animated: true)
     }
     
     func addMarker(theater: Theater, type: Theater.TheaterType) {
@@ -265,27 +275,41 @@ extension MapViewController: CLLocationManagerDelegate {
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        var view = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
-        if view == nil {
-            view = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
-            view?.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: CustomAnnotationView.identifier)
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: CustomAnnotationView.identifier)
+            annotationView?.canShowCallout = false
+            annotationView?.contentMode = .scaleAspectFill
+        } else {
+            annotationView?.annotation = annotation
         }
-    
+        
+        var logoImage: UIImage!
+        let size = CGSize(width: 30, height: 30)
+        UIGraphicsBeginImageContext(size)
+
         if let title = annotation.title {
-            
+
             if title!.contains(Theater.TheaterType.lotte.rawValue) {
-                view?.image = UIImage(named: "lotte")
+                logoImage = UIImage(named: "lotte")
             }
             if title!.contains(Theater.TheaterType.mega.rawValue) {
-                view?.image = UIImage(named: "megabox")
+                logoImage = UIImage(named: "megabox")
             }
             if title!.contains(Theater.TheaterType.cgv.rawValue) {
-                view?.image = UIImage(named: "cgv")
+                logoImage = UIImage(named: "cgv")
             }
         }
-            
-        view?.canShowCallout = true
-        return view
+
+        if let logoImage {
+            logoImage.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            annotationView?.image = resizedImage
+            return annotationView
+        } else {
+            return nil
+        }
+        
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
