@@ -20,6 +20,7 @@
 		C05B7EF92A949A69001808C5 /* Exam01ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EF82A949A69001808C5 /* Exam01ViewController.swift */; };
 		C05B7EFB2A94A6AA001808C5 /* Exam02ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EFA2A94A6AA001808C5 /* Exam02ViewController.swift */; };
 		C05B7EFE2A94A750001808C5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C05B7EFD2A94A750001808C5 /* Kingfisher */; };
+		C05B7F002A94E230001808C5 /* Exam03ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EFF2A94E230001808C5 /* Exam03ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C05B7EF42A947928001808C5 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		C05B7EF82A949A69001808C5 /* Exam01ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam01ViewController.swift; sourceTree = "<group>"; };
 		C05B7EFA2A94A6AA001808C5 /* Exam02ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam02ViewController.swift; sourceTree = "<group>"; };
+		C05B7EFF2A94E230001808C5 /* Exam03ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam03ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,7 @@
 		C04D40D42A930A00006AD1D7 /* week6 */ = {
 			isa = PBXGroup;
 			children = (
-				C05B7EF62A949A38001808C5 /* assignment */,
+				C05B7EF62A949A38001808C5 /* 0822_assignment */,
 				C05B7EEE2A944646001808C5 /* Test */,
 				C04D40D52A930A00006AD1D7 /* AppDelegate.swift */,
 				C04D40D72A930A00006AD1D7 /* SceneDelegate.swift */,
@@ -93,13 +95,14 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		C05B7EF62A949A38001808C5 /* assignment */ = {
+		C05B7EF62A949A38001808C5 /* 0822_assignment */ = {
 			isa = PBXGroup;
 			children = (
 				C05B7EF82A949A69001808C5 /* Exam01ViewController.swift */,
 				C05B7EFA2A94A6AA001808C5 /* Exam02ViewController.swift */,
+				C05B7EFF2A94E230001808C5 /* Exam03ViewController.swift */,
 			);
-			path = assignment;
+			path = 0822_assignment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +192,7 @@
 				C04D40D62A930A00006AD1D7 /* AppDelegate.swift in Sources */,
 				C05B7EF92A949A69001808C5 /* Exam01ViewController.swift in Sources */,
 				C04D40D82A930A00006AD1D7 /* SceneDelegate.swift in Sources */,
+				C05B7F002A94E230001808C5 /* Exam03ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +342,7 @@
 				DEVELOPMENT_TEAM = SV3K237PCX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = week6/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 날씨 정보가 궁금하니? 어디에서 사용할지 목적을 명확하게 적어야 리젝안되는 곳";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -366,6 +371,7 @@
 				DEVELOPMENT_TEAM = SV3K237PCX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = week6/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 날씨 정보가 궁금하니? 어디에서 사용할지 목적을 명확하게 적어야 리젝안되는 곳";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
