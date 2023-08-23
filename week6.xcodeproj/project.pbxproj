@@ -21,6 +21,7 @@
 		C05B7EFB2A94A6AA001808C5 /* Exam02ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EFA2A94A6AA001808C5 /* Exam02ViewController.swift */; };
 		C05B7EFE2A94A750001808C5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C05B7EFD2A94A750001808C5 /* Kingfisher */; };
 		C05B7F002A94E230001808C5 /* Exam03ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7EFF2A94E230001808C5 /* Exam03ViewController.swift */; };
+		C05B7F032A95D0D0001808C5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B7F022A95D0D0001808C5 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C05B7EF82A949A69001808C5 /* Exam01ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam01ViewController.swift; sourceTree = "<group>"; };
 		C05B7EFA2A94A6AA001808C5 /* Exam02ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam02ViewController.swift; sourceTree = "<group>"; };
 		C05B7EFF2A94E230001808C5 /* Exam03ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam03ViewController.swift; sourceTree = "<group>"; };
+		C05B7F022A95D0D0001808C5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		C04D40D42A930A00006AD1D7 /* week6 */ = {
 			isa = PBXGroup;
 			children = (
+				C05B7F012A95D0B5001808C5 /* 0823_assignment */,
 				C05B7EF62A949A38001808C5 /* 0822_assignment */,
 				C05B7EEE2A944646001808C5 /* Test */,
 				C04D40D52A930A00006AD1D7 /* AppDelegate.swift */,
@@ -103,6 +106,14 @@
 				C05B7EFF2A94E230001808C5 /* Exam03ViewController.swift */,
 			);
 			path = 0822_assignment;
+			sourceTree = "<group>";
+		};
+		C05B7F012A95D0B5001808C5 /* 0823_assignment */ = {
+			isa = PBXGroup;
+			children = (
+				C05B7F022A95D0D0001808C5 /* MapViewController.swift */,
+			);
+			path = 0823_assignment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 				C05B7EF22A945CBD001808C5 /* TextViewController.swift in Sources */,
 				C05B7EFB2A94A6AA001808C5 /* Exam02ViewController.swift in Sources */,
 				C05B7EF02A94467B001808C5 /* SnapViewController.swift in Sources */,
+				C05B7F032A95D0D0001808C5 /* MapViewController.swift in Sources */,
 				C04D40DA2A930A00006AD1D7 /* ViewController.swift in Sources */,
 				C05B7EF52A947928001808C5 /* LocationViewController.swift in Sources */,
 				C04D40D62A930A00006AD1D7 /* AppDelegate.swift in Sources */,
