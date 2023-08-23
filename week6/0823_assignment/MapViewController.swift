@@ -29,6 +29,17 @@ class MapViewController: UIViewController {
         view.showsUserLocation = true
         return view
     }()
+    
+    let locationButton = {
+        let view = UIButton()
+        view.tintColor = .blue
+        var config = UIButton.Configuration.filled()
+        config.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        config.image = UIImage(systemName: "location.circle")
+        view.configuration = config
+        return view
+    }()
+    
     //MARK: - 디자인 END
     
     override func viewDidLoad() {
@@ -53,6 +64,20 @@ class MapViewController: UIViewController {
     @objc
     func filterClicked() {
         showSheet()
+    }
+    
+    @objc
+    func locationButtonClicked() {
+        LocationHelper.shared.deviceLoactionStatus { gps, status in
+            switch gps {
+            case .on:
+                if let status {
+                    self.checkLocationAuth(status: status)
+                }
+            case .off:
+                self.showRequestLocationServiceAlert()
+            }
+        }
     }
     
     func showRequestLocationServiceAlert() {
@@ -99,11 +124,13 @@ class MapViewController: UIViewController {
             print("restricted, 자녀보호기능으로 제한")
         case .denied:
             print("denied, 거부")
-            self.updateMapViewCenter(
-                lat: Theater.defaultAnnotaion.latitude,
-                lng: Theater.defaultAnnotaion.longitude
-            )
-            showRequestLocationServiceAlert()
+            DispatchQueue.main.async {
+                self.updateMapViewCenter(
+                    lat: Theater.defaultAnnotaion.latitude,
+                    lng: Theater.defaultAnnotaion.longitude
+                )
+                self.showRequestLocationServiceAlert()
+            }
         case .authorizedAlways, .authorizedWhenInUse:
             print("authorizedAlways, authorizedWhenInUse")
             LocationHelper.shared.locationManager.startUpdatingLocation()
@@ -152,6 +179,7 @@ class MapViewController: UIViewController {
     
     func designVC() {
         setMapView()
+        setLocationButton()
         self.updateMapViewCenter(
             lat: Theater.defaultAnnotaion.latitude,
             lng: Theater.defaultAnnotaion.longitude
@@ -162,6 +190,16 @@ class MapViewController: UIViewController {
         view.addSubview(mapView)
         mapView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    func setLocationButton() {
+        locationButton.addTarget(self, action: #selector(locationButtonClicked), for: .touchUpInside)
+        view.addSubview(locationButton)
+        locationButton.snp.makeConstraints { make in
+            make.leading.equalTo(view).offset(16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-24)
+            make.size.equalTo(50)
         }
     }
     
