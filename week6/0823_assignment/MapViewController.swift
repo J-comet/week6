@@ -49,6 +49,7 @@ class MapViewController: UIViewController {
         designVC()
         
         LocationHelper.shared.locationManager.delegate = self
+        mapView.delegate = self
         
         // 최초 진입시 GPS 확인
         checkGPSAuth()
@@ -259,5 +260,35 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         print(#function, manager.authorizationStatus)
         checkGPSAuth()
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var view = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
+        if view == nil {
+            view = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
+            view?.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        }
+    
+        if let title = annotation.title {
+            
+            if title!.contains(Theater.TheaterType.lotte.rawValue) {
+                view?.image = UIImage(named: "lotte")
+            }
+            if title!.contains(Theater.TheaterType.mega.rawValue) {
+                view?.image = UIImage(named: "megabox")
+            }
+            if title!.contains(Theater.TheaterType.cgv.rawValue) {
+                view?.image = UIImage(named: "cgv")
+            }
+        }
+            
+        view?.canShowCallout = true
+        return view
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print(view.annotation?.title, "clicked")
     }
 }
