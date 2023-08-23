@@ -51,7 +51,6 @@ class MapViewController: UIViewController {
     }
     
     func showRequestLocationServiceAlert() {
-        //        print(URL(string: UIApplication.openSettingsURLString))
         let requestLocationServiceAlert = UIAlertController(title: "위치정보 이용", message: "위치 서비스를 사용할 수 없습니다. 기기의 '설정>개인정보 보호'에서 위치 서비스를 켜주세요.", preferredStyle: .alert)
         let goSetting = UIAlertAction(title: "설정으로 이동", style: .destructive) { _ in
             if let appSetting = URL(string: UIApplication.openSettingsURLString) {
@@ -66,32 +65,18 @@ class MapViewController: UIViewController {
     }
     
     func checkGPSAuth() {
-        DispatchQueue.global().async {
-            if CLLocationManager.locationServicesEnabled() {
-                // 위치 서비스 사용 가능
-                print("위치 서비스 사용 O")
-                var authorization: CLAuthorizationStatus
-                
-                // iOS 14 버전부터 위치권한 변경
-                if #available(iOS 14.0, *) {
-                    authorization = self.locationManager.authorizationStatus
-                } else {
-                    authorization = CLLocationManager.authorizationStatus()
+        LocationHelper.shared.deviceLoactionStatus { gps, authStatus in
+            switch gps {
+            case .on:
+                print("==== 123 ====")
+                if let authStatus {
+                    self.checkLocationAuth(status: authStatus)
                 }
                 
-                DispatchQueue.main.async {
-                    // 현재 위치 권한 상태 체크
-                    self.checkLocationAuth(status: authorization)
-                }
-                
-            } else {
-                // 위치 서비스 사용 불가능
-                print("위치 서비스 사용 X")
-                DispatchQueue.main.async {
-                    self.defaultMapCenter()
-                    self.showRequestLocationServiceAlert()
-                }
-                
+            case .off:
+                print("==== 456 ====")
+                self.defaultMapCenter()
+                self.showRequestLocationServiceAlert()
             }
         }
     }

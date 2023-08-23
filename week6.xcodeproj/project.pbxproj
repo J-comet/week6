@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C00A617E2A95DC6A00B35289 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00A617D2A95DC6A00B35289 /* Theater.swift */; };
+		C00A61802A95ECB300B35289 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00A617F2A95ECB300B35289 /* LocationHelper.swift */; };
 		C04D40D62A930A00006AD1D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D40D52A930A00006AD1D7 /* AppDelegate.swift */; };
 		C04D40D82A930A00006AD1D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D40D72A930A00006AD1D7 /* SceneDelegate.swift */; };
 		C04D40DA2A930A00006AD1D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D40D92A930A00006AD1D7 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		C00A617D2A95DC6A00B35289 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
+		C00A617F2A95ECB300B35289 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		C04D40D22A930A00006AD1D7 /* week6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04D40D52A930A00006AD1D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C04D40D72A930A00006AD1D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				C05B7F022A95D0D0001808C5 /* MapViewController.swift */,
 				C00A617D2A95DC6A00B35289 /* Theater.swift */,
+				C00A617F2A95ECB300B35289 /* LocationHelper.swift */,
 			);
 			path = 0823_assignment;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C00A61802A95ECB300B35289 /* LocationHelper.swift in Sources */,
 				C05B7EF22A945CBD001808C5 /* TextViewController.swift in Sources */,
 				C05B7EFB2A94A6AA001808C5 /* Exam02ViewController.swift in Sources */,
 				C05B7EF02A94467B001808C5 /* SnapViewController.swift in Sources */,
