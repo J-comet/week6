@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
 //        window?.rootViewController = UINavigationController(rootViewController: ViewController())
 //        window?.rootViewController = UINavigationController(rootViewController: MapViewController())
-        window?.rootViewController = CustomTableViewController()
+        window?.rootViewController = NetflixMainViewController()
         window?.makeKeyAndVisible()
     }
 
