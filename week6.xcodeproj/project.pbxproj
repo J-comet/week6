@@ -10,10 +10,14 @@
 		C00A617E2A95DC6A00B35289 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00A617D2A95DC6A00B35289 /* Theater.swift */; };
 		C00A61802A95ECB300B35289 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00A617F2A95ECB300B35289 /* LocationHelper.swift */; };
 		C00A61822A96412A00B35289 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00A61812A96412A00B35289 /* CustomAnnotationView.swift */; };
+		C00A61852A96F0F000B35289 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00A61842A96F0F000B35289 /* GenericViewController.swift */; };
+		C00A61872A96F12200B35289 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00A61862A96F12200B35289 /* UIViewController+Extension.swift */; };
+		C00A618A2A971CDF00B35289 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00A61892A971CDF00B35289 /* CustomViewController.swift */; };
+		C00A618C2A971E9600B35289 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00A618B2A971E9600B35289 /* BlackRadiusTextField.swift */; };
+		C00A618E2A972A1800B35289 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00A618D2A972A1800B35289 /* CustomTableViewController.swift */; };
 		C04D40D62A930A00006AD1D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D40D52A930A00006AD1D7 /* AppDelegate.swift */; };
 		C04D40D82A930A00006AD1D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D40D72A930A00006AD1D7 /* SceneDelegate.swift */; };
 		C04D40DA2A930A00006AD1D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D40D92A930A00006AD1D7 /* ViewController.swift */; };
-		C04D40DD2A930A00006AD1D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C04D40DB2A930A00006AD1D7 /* Main.storyboard */; };
 		C04D40DF2A930A01006AD1D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C04D40DE2A930A01006AD1D7 /* Assets.xcassets */; };
 		C04D40E22A930A01006AD1D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C04D40E02A930A01006AD1D7 /* LaunchScreen.storyboard */; };
 		C05B7EED2A94461D001808C5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C05B7EEC2A94461D001808C5 /* SnapKit */; };
@@ -31,11 +35,15 @@
 		C00A617D2A95DC6A00B35289 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
 		C00A617F2A95ECB300B35289 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		C00A61812A96412A00B35289 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		C00A61842A96F0F000B35289 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		C00A61862A96F12200B35289 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		C00A61892A971CDF00B35289 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		C00A618B2A971E9600B35289 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
+		C00A618D2A972A1800B35289 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		C04D40D22A930A00006AD1D7 /* week6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04D40D52A930A00006AD1D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C04D40D72A930A00006AD1D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C04D40D92A930A00006AD1D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C04D40DC2A930A00006AD1D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C04D40DE2A930A01006AD1D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C04D40E12A930A01006AD1D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C04D40E32A930A01006AD1D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +69,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C00A61832A96F0D000B35289 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				C00A61842A96F0F000B35289 /* GenericViewController.swift */,
+				C00A61862A96F12200B35289 /* UIViewController+Extension.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		C00A61882A971CAC00B35289 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				C00A61892A971CDF00B35289 /* CustomViewController.swift */,
+				C00A618B2A971E9600B35289 /* BlackRadiusTextField.swift */,
+				C00A618D2A972A1800B35289 /* CustomTableViewController.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		C04D40C92A930A00006AD1D7 = {
 			isa = PBXGroup;
 			children = (
@@ -80,13 +107,14 @@
 		C04D40D42A930A00006AD1D7 /* week6 */ = {
 			isa = PBXGroup;
 			children = (
+				C00A61882A971CAC00B35289 /* CustomView */,
+				C00A61832A96F0D000B35289 /* Generic */,
 				C05B7F012A95D0B5001808C5 /* 0823_assignment */,
 				C05B7EF62A949A38001808C5 /* 0822_assignment */,
 				C05B7EEE2A944646001808C5 /* Test */,
 				C04D40D52A930A00006AD1D7 /* AppDelegate.swift */,
 				C04D40D72A930A00006AD1D7 /* SceneDelegate.swift */,
 				C04D40D92A930A00006AD1D7 /* ViewController.swift */,
-				C04D40DB2A930A00006AD1D7 /* Main.storyboard */,
 				C04D40DE2A930A01006AD1D7 /* Assets.xcassets */,
 				C04D40E02A930A01006AD1D7 /* LaunchScreen.storyboard */,
 				C04D40E32A930A01006AD1D7 /* Info.plist */,
@@ -193,7 +221,6 @@
 			files = (
 				C04D40E22A930A01006AD1D7 /* LaunchScreen.storyboard in Resources */,
 				C04D40DF2A930A01006AD1D7 /* Assets.xcassets in Resources */,
-				C04D40DD2A930A00006AD1D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +233,11 @@
 			files = (
 				C00A61802A95ECB300B35289 /* LocationHelper.swift in Sources */,
 				C05B7EF22A945CBD001808C5 /* TextViewController.swift in Sources */,
+				C00A618C2A971E9600B35289 /* BlackRadiusTextField.swift in Sources */,
 				C05B7EFB2A94A6AA001808C5 /* Exam02ViewController.swift in Sources */,
+				C00A61872A96F12200B35289 /* UIViewController+Extension.swift in Sources */,
 				C05B7EF02A94467B001808C5 /* SnapViewController.swift in Sources */,
+				C00A61852A96F0F000B35289 /* GenericViewController.swift in Sources */,
 				C05B7F032A95D0D0001808C5 /* MapViewController.swift in Sources */,
 				C04D40DA2A930A00006AD1D7 /* ViewController.swift in Sources */,
 				C05B7EF52A947928001808C5 /* LocationViewController.swift in Sources */,
@@ -217,20 +247,14 @@
 				C04D40D82A930A00006AD1D7 /* SceneDelegate.swift in Sources */,
 				C00A617E2A95DC6A00B35289 /* Theater.swift in Sources */,
 				C05B7F002A94E230001808C5 /* Exam03ViewController.swift in Sources */,
+				C00A618E2A972A1800B35289 /* CustomTableViewController.swift in Sources */,
+				C00A618A2A971CDF00B35289 /* CustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C04D40DB2A930A00006AD1D7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C04D40DC2A930A00006AD1D7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C04D40E02A930A01006AD1D7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -369,7 +393,6 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 날씨 정보가 궁금하니? 어디에서 사용할지 목적을 명확하게 적어야 리젝안되는 곳";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -398,7 +421,6 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 날씨 정보가 궁금하니? 어디에서 사용할지 목적을 명확하게 적어야 리젝안되는 곳";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

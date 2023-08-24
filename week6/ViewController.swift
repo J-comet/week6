@@ -74,8 +74,10 @@ class ViewController: UIViewController {
     @objc
     func signupButtonClicked() {
         // 스토리보드에서 사용하지 않기 때문에 스냅뷰컨트롤러를 바로 사용
-        let nav = UINavigationController(rootViewController: LocationViewController())
-        present(nav, animated: true)
+        transition(viewController: GenericViewController.self, style: .push, storyboard: "Main")
+        
+//        let nav = UINavigationController(rootViewController: TextViewController())
+//        present(nav, animated: true)
     }
 
     // NSLayoutAnchor 방식
