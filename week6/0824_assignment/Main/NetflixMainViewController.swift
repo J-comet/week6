@@ -121,17 +121,20 @@ class NetflixMainViewController: UIViewController {
     }()
     
     let circleImageView = {
-        let view = NetflixMainCircleImageView(image: UIImage(named: "1"))
+        let view = NetflixMainCircleImageView(frame: .zero)
+        view.image = UIImage(named: "1")
         return view
     }()
     
     let circleImageView2 = {
-        let view = NetflixMainCircleImageView(image: UIImage(named: "2"))
+        let view = NetflixMainCircleImageView(frame: .zero)
+        view.image = UIImage(named: "2")
         return view
     }()
     
     let circleImageView3 = {
-        let view = NetflixMainCircleImageView(image: UIImage(named: "3"))
+        let view = NetflixMainCircleImageView(frame: .zero)
+        view.image = UIImage(named: "3")
         return view
     }()
     

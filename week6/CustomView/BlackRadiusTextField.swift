@@ -16,8 +16,8 @@ class BlackRadiusTextField: UITextField {
         setUpUI()
     }
     
-    // XIB -> aNIB 변환과정에서 객체 생성 시 필요한 init gougop
-    // InterFace Builder 에서 생선된 뷰들이 초가기화 될 때 사용
+    // XIB -> NIB 변환과정에서 객체 생성 시 필요한 init
+    // InterFace Builder 에서 생성된 뷰들이 초기화 될 때 사용
     required init?(coder: NSCoder) {  // NSCoding 에 만들어지는 메서드
         fatalError("init(coder:) has not been implemented")
     }

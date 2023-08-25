@@ -15,9 +15,21 @@ struct Sample {
 
 class CustomTableViewController: UIViewController {
     
-    let tableView = {
+    // viewDidLoad 보다 클로저 구문이 먼저 실행됨.
+    // lazy var 로 지연초기화를 이용해서 CustomTableViewController
+    // 인스턴스 생성이후에 tableView 를 초기화시켜서 self 키워드 사용
+    lazy var tableView = {
         let view = UITableView()
         view.rowHeight = UITableView.automaticDimension
+        view.dataSource = self
+        view.delegate = self
+        view.register(CustomTableViewCell.self, forCellReuseIdentifier: "customCell")
+        return view
+    }()
+    
+    let imageView = {
+        // 여기서 frame 으로 CGRect 로 작성이 되더라도 제약조건으로 크기가 다시 지정됨
+        let view = PosterImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         return view
     }()
     
@@ -37,10 +49,12 @@ class CustomTableViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "customCell")
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            print("snpsnp")
+            make.size.equalTo(200)
+            make.center.equalToSuperview()
+        }
     }
 }
 
@@ -51,9 +65,9 @@ extension CustomTableViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell")!
-        cell.textLabel?.text = list[indexPath.row].text
-        cell.textLabel?.numberOfLines = list[indexPath.row].isExpand ? 0 : 2
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
+        cell.titleLabel.text = list[indexPath.row].text
+        cell.titleLabel.numberOfLines = list[indexPath.row].isExpand ? 0 : 2
         return cell
     }
     

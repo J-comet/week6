@@ -10,12 +10,9 @@ import UIKit
 
 class NetflixMainCircleImageView: UIImageView {
     
-    override init(image: UIImage?) {
-        super.init(image: image)
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUpUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,17 +21,13 @@ class NetflixMainCircleImageView: UIImageView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setUpUI()
+        layer.cornerRadius = frame.size.width / 2
     }
     
     private func setUpUI() {
-        layer.masksToBounds = true
+//        layer.masksToBounds = true
         clipsToBounds = true
-        layer.borderWidth = 3
+        layer.borderWidth = 1.5
         layer.borderColor = UIColor.brown.cgColor
-        DispatchQueue.main.async {
-            self.layer.cornerRadius = self.frame.size.width / 2
-        }
-        
     }
 }

@@ -20,6 +20,9 @@
 		C018F4822A9783CD002565B0 /* NetflixMainCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018F4812A9783CD002565B0 /* NetflixMainCircleImageView.swift */; };
 		C018F4862A978E1A002565B0 /* NetflixLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018F4852A978E1A002565B0 /* NetflixLoginViewController.swift */; };
 		C018F4882A979332002565B0 /* NetflixLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018F4872A979332002565B0 /* NetflixLoginTextField.swift */; };
+		C018F48A2A982B01002565B0 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018F4892A982B01002565B0 /* CustomTableViewCell.swift */; };
+		C018F48C2A9840B1002565B0 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018F48B2A9840B1002565B0 /* PosterImageView.swift */; };
+		C018F48F2A984B57002565B0 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018F48E2A984B57002565B0 /* OnboardingViewController.swift */; };
 		C04D40D62A930A00006AD1D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D40D52A930A00006AD1D7 /* AppDelegate.swift */; };
 		C04D40D82A930A00006AD1D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D40D72A930A00006AD1D7 /* SceneDelegate.swift */; };
 		C04D40DA2A930A00006AD1D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04D40D92A930A00006AD1D7 /* ViewController.swift */; };
@@ -50,6 +53,9 @@
 		C018F4812A9783CD002565B0 /* NetflixMainCircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMainCircleImageView.swift; sourceTree = "<group>"; };
 		C018F4852A978E1A002565B0 /* NetflixLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixLoginViewController.swift; sourceTree = "<group>"; };
 		C018F4872A979332002565B0 /* NetflixLoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixLoginTextField.swift; sourceTree = "<group>"; };
+		C018F4892A982B01002565B0 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		C018F48B2A9840B1002565B0 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
+		C018F48E2A984B57002565B0 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C04D40D22A930A00006AD1D7 /* week6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04D40D52A930A00006AD1D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C04D40D72A930A00006AD1D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +100,8 @@
 				C00A61892A971CDF00B35289 /* CustomViewController.swift */,
 				C00A618B2A971E9600B35289 /* BlackRadiusTextField.swift */,
 				C00A618D2A972A1800B35289 /* CustomTableViewController.swift */,
+				C018F4892A982B01002565B0 /* CustomTableViewCell.swift */,
+				C018F48B2A9840B1002565B0 /* PosterImageView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -126,6 +134,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		C018F48D2A984B0B002565B0 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C018F48E2A984B57002565B0 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		C04D40C92A930A00006AD1D7 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +161,7 @@
 		C04D40D42A930A00006AD1D7 /* week6 */ = {
 			isa = PBXGroup;
 			children = (
+				C018F48D2A984B0B002565B0 /* Onboarding */,
 				C018F47C2A973F36002565B0 /* 0824_assignment */,
 				C00A61882A971CAC00B35289 /* CustomView */,
 				C00A61832A96F0D000B35289 /* Generic */,
@@ -283,11 +300,14 @@
 				C05B7EF52A947928001808C5 /* LocationViewController.swift in Sources */,
 				C04D40D62A930A00006AD1D7 /* AppDelegate.swift in Sources */,
 				C00A61822A96412A00B35289 /* CustomAnnotationView.swift in Sources */,
+				C018F48F2A984B57002565B0 /* OnboardingViewController.swift in Sources */,
 				C018F4822A9783CD002565B0 /* NetflixMainCircleImageView.swift in Sources */,
+				C018F48C2A9840B1002565B0 /* PosterImageView.swift in Sources */,
 				C018F47E2A973FAB002565B0 /* NetflixMainViewController.swift in Sources */,
 				C05B7EF92A949A69001808C5 /* Exam01ViewController.swift in Sources */,
 				C018F4882A979332002565B0 /* NetflixLoginTextField.swift in Sources */,
 				C018F4862A978E1A002565B0 /* NetflixLoginViewController.swift in Sources */,
+				C018F48A2A982B01002565B0 /* CustomTableViewCell.swift in Sources */,
 				C04D40D82A930A00006AD1D7 /* SceneDelegate.swift in Sources */,
 				C00A617E2A95DC6A00B35289 /* Theater.swift in Sources */,
 				C05B7F002A94E230001808C5 /* Exam03ViewController.swift in Sources */,
